@@ -33,7 +33,7 @@ def diceRoll(maximumRolls):
     return highestRoll
 
 def main():
-    maximumRolls = 1000000 # pick your roll count here 
+    maximumRolls = 1000000000 # pick your roll count here 
     numProcesses = cpu_count() # use as many cores as are available, this WILL use 100% of your cpu so yeah
     rollsPerProcess = maximumRolls // numProcesses
 
@@ -46,6 +46,7 @@ def main():
 
     print(f"run time: {time.time() - st:.2f} seconds")
     print(f"highest roll: {highestRoll}") # browsed the docs for all the multiprocessing implenetation: https://docs.python.org/3/library/multiprocessing.html
+    print(f"total simulations: {maximumRolls}")
 
 if __name__ == "__main__":  
     main()
